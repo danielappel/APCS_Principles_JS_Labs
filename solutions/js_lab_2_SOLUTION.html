@@ -1,0 +1,148 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>JS Lab #2</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+   
+</head>
+
+<body>
+<div>
+    <h1> JavaScript Lab #2 </h1>
+    
+    <div id="div1">
+     <h2> Part 1 </h2>
+     
+     <input type = "button"
+       value = "Number Evaluator"
+       onclick = "evaluateNumber()">
+    
+    
+    
+    </div>
+    
+    <div id = "div2">
+      <h2> Part 2 </h2>
+      
+       <input type = "button"
+       value = "Values 1-20"
+       onclick = "firstLoop()">
+        
+         <input type = "button"
+       value = "Even Values 1-20"
+       onclick = "secondLoop()">
+        
+         <input type = "button"
+       value = "Odd Values 1-20"
+       onclick = "thirdLoop()">
+        
+              <input type = "button"
+       value = "First 20 Multiples of 5"
+       onclick = "fourthLoop()">
+    
+    </div>
+    
+    <div id="div3" class = "redback">
+      <h2> Part 3 </h2>
+     <input type = "button" value = "Change Color" onclick="changeColor()">
+        
+      <input type = "button" value = "Change Text" onclick = "changeText()">
+    
+    </div>
+    
+    <script>
+    //Add your code below:
+    
+    //PART 1
+    function evaluateNumber() {
+        //This will prompt the user for text...it must then be converted to a number
+        var numberText = prompt("Enter a number: ", "0");
+        
+        var number = parseInt(numberText);
+        
+        //conditionals below
+        if(number > 10) {    
+            alert("Number " + number + " is greater than 10");
+        }
+        
+        if(number > 0 && number < 10) {
+            alert("Number " + number + " is between 0 and 10");
+        }
+        
+
+    }
+    
+    //PART 2
+    function firstLoop() {
+        //Complete the code to get the numbers 1-20 printed out
+        var output = "";
+        for(var i = 0; i < 21; i++) {
+          output += i + ", ";
+        }
+        alert("The numbers 1-20 are: " + output);
+    }
+    
+    //complete for the other loops
+        
+    function secondLoop() {
+        //Even Numbers
+        var output = "";
+        for(var i = 0; i < 21; i++) {
+          if (i % 2 == 0) {
+            output += i + ", ";
+          }
+        }
+        alert("The even numbers 1-20 are: " + output);
+        
+    }
+        
+    function thirdLoop() {
+        //Odd numbers
+        var output = "";
+        for(var i = 0; i < 21; i++) {
+          if (i % 2 == 1) {
+            output += i + ", ";
+          }
+        }
+        alert("The odd numbers 1-20 are: " + output);
+        
+    
+    }
+        
+    function fourthLoop() {
+        //Odd numbers
+        var output = "";
+        for(var i = 0; i < 21; i++) {
+          
+            output += 5*i + ", ";
+        }
+        alert("The odd numbers 1-20 are: " + output);
+        
+    
+    }
+    
+    //PART 3
+    function changeColor() {
+        var divThreeElement = document.getElementById("div3");
+        divThreeElement.className = "orangeback";
+        
+    }    
+    function changeText() {
+       //Add your code below
+        var divThreeElement = document.getElementById("div3");
+        divThreeElement.innerHTML = "Changed with a Button!";
+        
+        
+    }
+    
+   
+</script>
+
+</div>
+</body>
+</html>

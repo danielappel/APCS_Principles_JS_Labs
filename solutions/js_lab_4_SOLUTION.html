@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="buttons.css"> 
+</head>
+
+<body id="body">
+<div id="div_1">
+    <h1>Duke Week #3-Buttons</h1>
+    
+</div>
+    
+<canvas id = "canvas">
+    <h1>Duke Week #3-Buttons</h1>
+    
+</canvas>  
+
+<div id="button_div">
+    <input class ="button" type="button" value="Green Background" onclick="greenBackground()">
+    <br>
+    <input class ="button" type="button" value="Red Background" onclick="redBackground()">
+    <br>
+    <input class ="button" type="button" value="Challenge Button" onclick="challengeFunction()">
+</div>
+    
+<script>
+    //Think about how to load from an external sheet???
+    
+    var divOne = document.getElementById("div_1");
+    divOne.innerHTML = "Changed with a function!";
+    
+    function greenBackground() {
+        var body = document.getElementById("body");
+        body.className = "greenBackground";
+        
+    }
+    
+    function redBackground() {
+        var body = document.getElementById("body");
+        body.className = "redBackground";
+        
+    }
+    
+    function myFunction() {
+        alert('This is in a function!');   
+    }
+    
+    function challengeFunction() {
+        var answer = confirm("Do you want to proceed?");
+        if (answer === true) {
+            alert("We will continue");   
+        }
+        else {
+            alert("No problem");   
+        }
+    }
+</script>
+</body>
+</html>

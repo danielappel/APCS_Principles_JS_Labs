@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>JS Lab #4</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+   
+</head>
+
+<body>
+
+  <script src="SimpleImage.js"></script>
+  
+  <div>
+      
+      <h1>Image Manipulation</h1>
+      <canvas id = "canvas">
+          
+          
+      </canvas>  
+      
+      <canvas id = "canvasMod">
+      
+      </canvas>
+
+      <br>
+          
+      
+      <p> Filename: 
+          <input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()">
+          <input type="button" value = "Modify Image" onclick="modify()">
+          
+      </p>
+      
+  
+  
+  </div>
+    
+<script>
+
+    var image;
+    var fileInput;
+    
+    function upload() {
+        var imgCanvas = document.getElementById("canvas");
+        fileInput = document.getElementById("finput"); //finput
+        //var userInput = textInput.value;
+        image = new SimpleImage(fileInput);
+
+        image.drawTo(imgCanvas);
+
+           
+    }
+    
+    function modify() {
+        imgCanvas = document.getElementById("canvasMod");
+
+        for(var pixel of image.values()) {
+          //Make any modifications below
+          pixel.setRed(255); 
+          
+        }
+        
+        image.drawTo(imgCanvas);
+           
+    }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="buttons.css"> 
+</head>
+
+<body>
+<div id="div_1">
+    <h1>Div #1 Text-Uses direct call to alert</h1>
+    <input class ="button" type="button" value="Click Me" onclick="alert('You clicked it!!')">
+</div>
+    
+<div id = "div_2">
+    <h1>Div #2 Text-Uses functions defined in javaScript</h1>
+    
+    <input class ="button" type="button" value="Click Me" onclick="myFunction()">
+    <br>
+    <input class ="button" type="button" value="Challenge Button" onclick="challengeFunction()">
+    
+</div>  
+
+    
+<script>
+
+    function myFunction() {
+        alert('This is in a function!');   
+    }
+    
+    function challengeFunction() {
+        var answer = confirm("Do you want to proceed?");
+        if (answer === true) {
+            alert("We will continue");   
+        }
+        else {
+            alert("No problem");   
+        }
+    }
+</script>
+</body>
+</html>

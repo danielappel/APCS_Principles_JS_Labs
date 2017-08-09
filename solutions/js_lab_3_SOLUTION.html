@@ -1,0 +1,94 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="buttons.css"> 
+</head>
+
+<body id="body">
+
+    
+<h1>Duke Week #3-Canvas Interactive-Multiple Inputs</h1>
+<canvas id = "canvas">
+    
+    
+</canvas>  
+<br>
+    
+
+<input type="button" value="Lime Background" onclick="doLime()">
+    
+<br>
+    
+<input type="button" value="Yellow Background" onclick="doYellow()">
+
+<br>
+<input type="button" value="Make Rectangles" onclick="makeRectangles()">
+    
+<br>
+    <input type="button" value="Say Hello" onclick="makeText()">
+    
+    <input type="color" value="red" id="clr" onchange="doColor()">
+    
+    <!--Can change to onclick to see difference-->
+    
+    <input type="range" min="10" max="100" value = "10" id="sldr" oninput="doSquare()">
+
+
+    
+<script>
+    //Think about how to load from an external sheet???--NO
+    
+    //global variables
+     var canvOne = document.getElementById("canvas");
+    var ctx = canvOne.getContext("2d");
+       
+function doLime() {    
+    var canvOne = document.getElementById("canvas");
+    canvOne.style.backgroundColor ="lime";
+}
+   function doYellow() {    
+    
+    canvOne.style.backgroundColor ="yellow";
+
+}
+    
+   function makeRectangles() {    
+   
+   
+    ctx.fillStyle = "blue";
+    ctx.fillRect(10, 10, 40, 40);
+}
+    
+    function makeText() {
+         ctx.fillStyle="black";
+        ctx.font = "30px Arial";
+         ctx.fillText("Hello", 10, 80);
+    }
+    
+    function doColor() {
+        var colorinput = document.getElementById("clr");
+        var color = colorinput.value;
+        canvOne.style.backgroundColor = color;
+        
+    }
+    
+    function doSquare() {
+     var sliderInput = document.getElementById("sldr");
+        var value = sliderInput.value;
+        //larger will ovewrite smaller, so need to clear
+        ctx.clearRect(0, 0, canvOne.width, canvOne.height);
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(10, 10, value, value);
+        
+    }
+    
+
+</script>
+</body>
+</html>

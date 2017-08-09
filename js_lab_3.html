@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>JS Lab #3</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+   
+</head>
+
+<body>
+
+  <div>
+    <h1>Interactive Canvas With Multiple Inputs</h1>
+      <canvas id = "canvas">
+          
+          
+      </canvas>  
+      <br>
+          
+      
+      <input type="button" value="Lime Background" onclick="doLime()">
+      
+      <!--Add your own button for second color below-->
+          
+      <br>
+          
+     
+      <input type="button" value="Make Rectangles" onclick="makeRectangles()">
+          
+      <br>
+      <input type="button" value="Say Hello" onclick="makeText()">
+          
+      <input type="color" value="red" id="clr" onchange="doColor()">
+          
+          
+      <input type="range" min="10" max="100" value = "10" id="sldr" oninput="doSquare()">
+      
+      
+          
+      <script>
+          
+          
+          //global variables
+           var canvOne = document.getElementById("canvas");
+          var ctx = canvOne.getContext("2d");
+             
+      function doLime() {    
+          canvOne.style.backgroundColor ="lime";
+      }
+  
+      //Add your second color function below
+          
+         function makeRectangles() {    
+          
+          
+      }
+          
+          function makeText() {
+               
+          }
+          
+          function doColor() {
+              
+              
+          }
+          
+          function doSquare() {
+          
+              
+          }
+          
+      
+      </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>JS Lab #2</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+   
+</head>
+
+<body>
+<div>
+    <h1> JavaScript Lab #2 </h1>
+    
+    <div id="div1">
+     <h2> Part 1 </h2>
+     
+     <input type = "button"
+       value = "Number Evaluator"
+       onclick = "evaluateNumber()">
+    
+    
+    
+    </div>
+    
+    <div id = "div2">
+      <h2> Part 2 </h2>
+      
+       <input type = "button"
+       value = "Values 1-20"
+       onclick = "firstLoop()">
+    
+    </div>
+    
+    <div id="div3">
+      <h2> Part 3 </h2>
+      <input type = "button"
+       value = "Change Text"
+       onclick = "changeText()">
+    
+    </div>
+    
+    <script>
+    //Add your code below:
+    
+    //PART 1
+    function evaluateNumber() {
+        //This will prompt the user for text...it must then be converted to a number
+        var numberText = prompt("Enter a number: ", "0");
+        
+        var number = parseInt(numberText);
+        
+        //conditionals below
+
+    }
+    
+    //PART 2
+    function firstLoop() {
+        //Complete the code to get the numbers 1-20 printed out
+        output = "";
+        for(var i = 0; i < 2; i++) {
+          output += i + ", ";
+        }
+        alert("The numbers 1-20 are: " + output);
+    }
+    
+    //complete for the other loops
+    
+    //PART 3
+    function changeText() {
+       //Add your code below
+    }
+    
+   
+</script>
+
+</div>
+</body>
+</html>

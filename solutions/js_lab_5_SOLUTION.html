@@ -1,0 +1,171 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>JS Lab #5-SOLUTION</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+   
+</head>
+
+<body>
+
+  <script src="SimpleImage.js"></script>
+  
+  <div>
+      
+      <h1>GrayScale</h1>
+      <canvas id = "canvas">
+          
+          
+      </canvas>  
+      
+      <canvas id = "canvasMod">
+      
+      </canvas>
+
+      <br>
+          
+      
+      <p> Filename: 
+          <input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()">
+          <input type="button" value = "GrayScale Image" onclick="grayScale()">
+          
+      </p>
+  
+  </div>
+  
+  <div>
+      <h1> Green Screen Manipulation </h1>
+      
+       <canvas id = "canvasGreen">
+          
+          
+      </canvas>  
+      
+      <canvas id = "canvasBack">
+      
+      </canvas>
+      
+      <canvas id = "canvasBoth">
+      
+      </canvas>
+
+      <br>
+          
+      
+      <p> Green Screen Image: 
+          <input type="file" multiple="false" accept="image/*" id="greenImage" onchange="uploadGreen()">
+          <br>
+          Background Image: 
+          <input type="file" multiple="false" accept="image/*" id="backImage" onchange="uploadBack()">
+          
+          <input type="button" value = "Green Screen Image" onclick="greenScreen()">
+          
+      </p>
+      
+  </div>
+    
+<script>
+
+    var image;
+    var imageTwo;
+    var fileInput;
+    
+    function upload() {
+        var imgCanvas = document.getElementById("canvas");
+        fileInput = document.getElementById("finput"); //finput
+        //var userInput = textInput.value;
+        image = new SimpleImage(fileInput);
+        
+        image.drawTo(imgCanvas);
+
+           
+    }
+    
+    function grayScale() {
+        imgCanvas = document.getElementById("canvasMod");
+
+        for(var pixel of image.values()) {
+          //Make any modifications below
+          
+          var green = pixel.getGreen();
+          var red = pixel.getRed();
+          var blue = pixel.getBlue();
+          var gray = (green + red + blue) / 3;
+          pixel.setRed(gray);
+          pixel.setGreen(gray);
+          pixel.setBlue(gray);
+        
+          
+        }
+        
+        image.drawTo(imgCanvas);
+           
+    }
+    
+    var greenImage;
+    var backgroundImage;
+    var combinedImage;
+    
+    function uploadGreen() {
+        var imgCanvas = document.getElementById("canvasGreen");
+        fileInput = document.getElementById("greenImage"); 
+       
+        greenImage = new SimpleImage(fileInput);
+       
+        greenImage.drawTo(imgCanvas);
+   
+    }
+    
+    function uploadBack() {
+        var imgCanvas = document.getElementById("canvasBack");
+        fileInput = document.getElementById("backImage"); 
+       
+        backgroundImage = new SimpleImage(fileInput);
+
+        backgroundImage.drawTo(imgCanvas);
+   
+    }
+    
+    function greenScreen() {
+     //modify below
+     var imgCanvas = document.getElementById("canvasBoth");
+     var width = greenImage.getWidth();
+     var height = greenImage.getHeight();
+     combinedImage = new SimpleImage(width, height);
+     
+     for(var row = 0; row < greenImage.getWidth(); row++) {
+       for(var col = 0; col < greenImage.getHeight(); col++) {
+        //get pixels from green screen...if green, use the background image
+        var greenPixel = greenImage.getPixel(row, col);
+        var backPixel = backgroundImage.getPixel(row, col);
+
+        
+        //evaluate green
+        if (greenPixel.getGreen() > 230) {
+          //set to back pixel
+          combinedImage.setPixel(row, col, backPixel);
+        }
+        else {
+          combinedImage.setPixel(row, col, greenPixel); 
+        }
+       
+       }
+       
+     }
+      combinedImage.drawTo(imgCanvas);
+     
+     
+     
+    }
+    
+    
+    
+    
+</script>
+</body>
+</html>
