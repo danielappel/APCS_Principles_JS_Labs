@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JS Example 1</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+      <style>
+        canvas {
+            border: 1px solid black;   
+        }
+      </style>
+      
+      <script type="text/javascript" src="js/canvasExample.js"></script>
+  </head>
+  <body>
+      <div>
+    <h1>Using the javaScript Canvas</h1>
+      
+      
+      <p>Below is a javaScript Canvas</p>
+      
+      <canvas id="myCanvas" width = "600" height = "600"></canvas>
+
+        <p>A javascript file can manipulate the above canvas</p>
+          <p>Buttons can also be used to manipulate the canvas.  Buttons are HTML elements
+              but can be tied to javascript commands
+          </p>
+          
+        <input type = "button" value = "Change Color" onclick="changeColor()">
+
+          
+        <p>
+            Further, different inputs can be used to create types of buttons.  For example, a color chooser
+            can be used to select the color of the background
+        </p>
+        Select the background color:
+          
+        <input type="color" value="red" id="colorChooser" onchange="chooseColor()">
+          
+         
+      </div>
+      
+
+      
+      
+    
+  </body>
+</html>
